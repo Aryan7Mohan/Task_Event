@@ -1,0 +1,93 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<h1 class="card-title">Events</h1>
+      <div class="card-body">
+        
+
+
+        
+	{% if data %}
+
+        <div >
+          
+
+        	
+        	{% for x in data %}
+
+
+        	<div class="card" style="border: none; width: 90%;   ">
+
+        		<div>
+        			
+        			<div class="image" style="display:inline-block; margin: 5px 5px 5px 5px;">
+        				<img src="{{x.image.url}}"   style="max-height: 120px;">
+        			</div>
+
+        			<div class="details"  style="display:inline-block; margin: 5px 5px 5px 15px; ">
+                
+        				<b>{{x.event_name}}</b>
+        				<p style="font-size:12px;">{{x.time}}<br>
+        					Location: {{x.location}}<br>
+        				Starts at {{x.data}}</p>
+        				
+        			</div>
+        			
+              <form action="/Like" method="POST" style="display:inline-block; float: right;">
+                {% csrf_token %}
+
+                
+                  
+
+                  
+                   <button type="submit" class="btn btn-light" id="summary" name="like" value="{{x.event_name}}">
+                    {% if arr.key == '0' and arr.name == x.event_name  %}
+                    <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+
+                    {% elif arr.key == '1' and arr.name == x.event_name %}
+
+                    <i class="fa fa-heart" aria-hidden="true" style="color:white;"></i>
+
+                  </button>
+                  {% endif %}
+                  
+                
+                
+                
+
+
+              </form>
+             
+        			
+
+        		</div>
+        	</div>
+
+
+
+        	{% endfor %}
+        	
+        	{% else %}
+			
+		    <div style="text-align: center; padding-top: 80px;">
+          		<span style="font-size: 35px; display: block; ">No Events</span>
+          
+        	</div>
+
+		    {% endif %}
+
+		    <div style="padding-top: 20px; text-align:center;">
+          <a type="button" href="/form" class="btn btn-light btn-sm">Add Event</a></div>
+        </div>
+          
+        
+
+        
+
+
+
+      </div>
+      
+
+{% endblock %}

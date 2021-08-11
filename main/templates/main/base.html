@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>Events</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+      <a class="navbar-brand" href="#" style=" padding-left: 10px; padding-right: 15px; color: #F05537;"><b>Events</b></a>
+
+     <form class="form-inline my-2 my-lg-0">
+          <i class="fa fa-search" aria-hidden="true" style="color: #6C757D;"></i><input class="form-control mr-sm-2" type="search" placeholder="Search for events" style="border: none; height: 30px; background: #F8F9FA; font-size: 15px;" >
+          
+      </form>
+
+      <div class="collapse navbar-collapse" >
+        <ul class="navbar-nav mr-auto" style="left: 100; margin:auto; padding-left: 650px;">
+
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Browse Events </a>
+          </li>
+
+          
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" >
+             Host an Event
+            </a>
+            
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
+              Help
+            </a>
+            
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
+              Settings
+            </a>
+            
+          </li>
+          
+        </ul>
+        
+      </div>
+    </nav>
+
+
+    <div class="card " style="border: none; width: 50%; top: 80; margin: auto;">
+      
+      {% block content %}
+
+      
+      
+      {% endblock %}
+
+
+
+
+    </div>
+
+
+  </body>
+</html>

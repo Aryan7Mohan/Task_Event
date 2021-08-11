@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1 class="card-title">Add Event</h1>
+<div class="card-body">
+<form action="/" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<span style="display: inline-block; padding-right:30px; padding-bottom:20px">Event Name: </span><input type="text" class="form-control" style="width: 300px; display: inline-block;" name="event_name" required /> <br>
+
+	<span style="display: inline-block; padding-right:30px; padding-bottom:20px">Price: </span><input type="text" class="form-control" style="width: 300px; display: inline-block;" name="data" required />	<br>
+
+	<span style="display: inline-block; padding-right:30px; padding-bottom:20px">Time: </span><input type="datetime-local" class="form-control" style="width: 300px; display: inline-block;" name="time" required />	<br>
+
+	<span style="display: inline-block; padding-right:30px; padding-bottom:20px">Location: </span><input type="text" class="form-control" style="width: 300px; display: inline-block;" name="location" required />	<br>
+
+	<span style="display: inline-block; padding-right:30px; padding-bottom:20px">Image: </span>
+	<input type="file"  style="display:inline-block;" name="image"  />	<br>
+
+	<input type="submit" class="btn btn-light" value="Submit">
+
+	
+
+
+	</form>
+
+</div>
+
+{% endblock %}
